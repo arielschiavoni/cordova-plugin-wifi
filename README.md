@@ -1,4 +1,7 @@
 cordova-plugin-wifi
 ===================
 
-Cordova wifi plugin
+Cordova plugin to access device wifi capabilities.
+
+- Scan Wifi networks
+- Connect to a specified Wifi
