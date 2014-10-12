@@ -1,0 +1,35 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.arielschiavoni.cordova.plugin.wifi" version="0.1">
+
+  <name>Wifi</name>
+  <description>Cordova plugin to access device's wifi capabilities</description>
+  <license>Apache 2.0</license>
+  <autor>Ariel Schiavoni</autor>
+  <keywords>cordova,wifi</keywords>
+  <js-module src="www/wifi.js" name="wifi">
+    <clobbers target="wifi" />
+  </js-module>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Wifi">
+        <param name="ios-package" value="CDVWifi"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/CDVWifi.h" />
+    <source-file src="src/ios/CDVWifi.m" />
+  </platform>
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Wifi">
+        <param name="android-package" value="com.arielschiavoni.cordova.plugin.wifi.Wifi"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    </config-file>
+    <source-file src="src/android/Wifi.java" target-dir="src/com/arielschiavoni/cordova/plugin/wifi/"/>
+  </platform>
+</plugin>
