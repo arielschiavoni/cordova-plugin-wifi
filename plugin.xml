@@ -10,15 +10,6 @@
   <js-module src="www/wifi.js" name="wifi">
     <clobbers target="wifi" />
   </js-module>
-  <platform name="ios">
-    <config-file target="config.xml" parent="/*">
-      <feature name="Wifi">
-        <param name="ios-package" value="CDVWifi"/>
-      </feature>
-    </config-file>
-    <header-file src="src/ios/CDVWifi.h" />
-    <source-file src="src/ios/CDVWifi.m" />
-  </platform>
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="Wifi">
