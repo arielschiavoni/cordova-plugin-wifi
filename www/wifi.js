@@ -6,8 +6,8 @@ Wifi.prototype.scan = function (successCallback, errorCallback) {
 	cordova.exec(successCallback, errorCallback, "Wifi", "scan", []);
 };
 
-Wifi.prototype.connect = function (ssid, successCallback, errorCallback) {
-	cordova.exec(successCallback, errorCallback, "Wifi", "connect", [ssid]);
+Wifi.prototype.connect = function (ssid, authType, password, successCallback, errorCallback) {
+	cordova.exec(successCallback, errorCallback, "Wifi", "connect", [ssid, authType, password]);
 };
 
 module.exports = new Wifi();
